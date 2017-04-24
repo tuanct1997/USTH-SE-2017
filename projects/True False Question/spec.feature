@@ -5,28 +5,28 @@ Feature: True/False Question
 
 Scenario: Dat want to play True/False Game
 	Given image of Oslo 
-	And Oslo is the capital of Norway
+	  And Oslo is the capital of Norway
 	When he clicks yes
-	And he clicks check
+	  And he clicks check
 	Then he got 1 point
 	
 Scenario: Hung want to play True/False Game
 	Given image of Oslo
-	And Oslo is the capital of Norway
+	  And Oslo is the capital of Norway
 	When he clicks no
-	And he clicks check
+	  And he clicks check
 	Then he got 0 point
-	Then he clicks show solution
-	And the solution is shown
+	When he clicks show solution
+	Then the solution is shown
 
 Scenario: Long want to play True/False Game
 	Given image of Oslo 
-	And Oslo is the capital of Norway
+	  And Oslo is the capital of Norway
 	When he clicks no
-	And he click check
+	  And he click check
 	Then he got 0 point
-	Then he clicks Retry
-	And he answer it again
+	When he clicks Retry
+	Then he answers it again
 
 Scenario: Dat want to play the next question
 	Given next button
