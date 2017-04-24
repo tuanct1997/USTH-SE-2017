@@ -14,7 +14,7 @@ Scenario: user choose an answer
 Given The "life" set has 3
 When the answer is incorrect at the first time
 Then output should be "Wrong answer! Retry?"
-And answer that question again
+And "Retry" button appears
 And the "life" set has 2
 
 Scenario: user press button "Retry"
@@ -26,7 +26,7 @@ Scenario: user choose an answer
 Given The "life" set has 2
 When the answer is incorrect at the second time
 Then output should be "Wrong answer! Retry?"
-And answer that question again
+And "Retry" button appears
 And the "life" set has 1
 
 Scenario: user press button "Retry"
@@ -39,6 +39,7 @@ Given The "life" set has 1
 When the answer is incorrect at the third time
 Then output should be "You are dead! Try the quizz again!"
 And the "life" set has 0
+And "Retry" button appears
 
 Scenario: user press button "Retry"
 Given The "life" sets has 0
