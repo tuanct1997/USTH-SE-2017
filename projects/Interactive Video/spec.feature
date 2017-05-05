@@ -1,34 +1,68 @@
 Interactive video on working out to help beginners 
 
+Feature: video player
+    Scenario: User clicks on 'pause button'
+        Given user wants to temporary stop the video
+        When user clicks on the 'pause button'
+        Then pauses the video
+
+    Scenario: User clicks on 'full-screen button'
+        Given user wants to view the video in full-screen
+        When user clicks on 'full-screen'
+        Then put the video on full-screen mode
+
+    Scenario: User clicks on a certain time on the timeline of the video
+        Given user wants to choose a certain play time
+        When user clicks on a certain time on the timeline
+        Then fastfoward the video to that play time
+
+    Scenario: User hovers the mouse over the 'volume button'
+        Given user wants to adjust the volume of the video
+        When user hovers the mouse over the 'volume button'
+        Then show the volume bar
+
+    Scenario: User chooses a certain volume point
+        Given the volume bar appears
+        When user holds the pointer on volume bar
+        And move the pointer
+        Then adjust the volume of the video
+
 Feature: Multiple choice questions
     
     An user is watching a video on working out and there are some questions appear for the user to answer which contain
   very important knowledge
 
-    Scenario: The user is required to answer a question popped up on the screen to continue with the video
+    Scenario: A question popped up on the screen
         Given user comes to a predefined time in the video
         And a multiple choice question automatically appears on the screen, pauses the video
         When user selects an answer
         Then highlight the right answer
         And give out the answer and explaination for the question, resumes the video
          
-    Scenario: The user chooses to answer an optional question on the video
+    Scenario: An optional question on the video
         Given user come to a predefined time in the video
-        And a button indicates a multiple choice question appears, pauses the video
+        And a button indicates a multiple choice question appears
         When user selects the question button
-        And selects an answer
-        Then highlight the right answer
-        And give out the answer and explaination for the question, resumes the video
+        Then show the question
+        And pause the video
+
+    Scenario: User chooses to answer the optional question
+        Given user chooses to answer the optional question
+        When user chooses an answer
+        Then highlight the correct answer
+        And give out explaination, resumes the video
 
 Feature: Interactive summaries
 
     The summary for each exercise appear on the screen to provide the most important things that the user need to remember
 
-    Scenario: The user reaches the end of an exercise and has the summary popped out
-        Given user comes to the end of each exercise
-        And a summary box appear, pauses the video
+    Scenario: The user reaches the end of an exercise
+        Given a summary box appear
+        And pauses the video
         When user selects the right summary choices
         Then Start the next exercise of the video
+        When user selects the wrong summary choices
+        Then notify the users about the number of incorrect choices
 
 Feature: Images
     
