@@ -1,0 +1,17 @@
+Feature: Classic image pairing memory game
+
+    A free HTML5-based memory game content type allowing authors to add their own images (and optional text) to a memory game. To play the game, users search for image pairs, which will display a specified text message once a matching pair has been found. Memory games are created using only a web browser in a WordPress, Moodle or Drupal web site.
+
+    Scenario: Same image pairing game
+        Given 10 image with 5 pair of same picture
+        When player reveal a pair that was the same as each other
+        Then reveal those two images till the end of the game
+	And increase the player score
+
+    Scenario: Match places with flags game
+        Given 16 images of flag randomly arrange
+	And   16 images of country that match the flag randomly arrange
+        When  each time player flip a correct pair of flag and picture
+        Then  reveal that flag and picture till the end of the game
+	And   Player score increase
+
