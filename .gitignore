@@ -2,5 +2,6 @@
 ._*
 
 projects/*/node_modules/*
-
+projects/*/dll/*
+Projects/*/dist/*
 projects/ImageHotspots/coverage/*
