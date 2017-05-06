@@ -1,9 +1,6 @@
 # Thumbnails
 ._*
 
-*@types/node*
+projects/ImageHotspot/node_modules/*
 
-projects/ImageHotspot/node_modules/.bin/karma
-projects/ImageHotspot/node_modules/.bin/tslint
-projects/ImageHotspot/node_modules/karma/package.json
-projects/ImageHotspot/node_modules/tsline/package.json
+projects/ImageHotspots/coverage/*
