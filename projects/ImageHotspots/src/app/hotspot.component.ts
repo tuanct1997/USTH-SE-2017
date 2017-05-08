@@ -30,6 +30,7 @@ import { HotSpotService } from './hotspot.service'
 
   styles: [`
     .background {
+      background-image: url("../assets/img/asia.map.jpg");
       margin: 0 0 2em 0;
       list-style-type: none;
       padding: 0;
