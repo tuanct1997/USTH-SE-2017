@@ -7,17 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Image Hotspot';
+var hotspot_mock_1 = require("./hotspot-mock");
+var HotSpotService = (function () {
+    function HotSpotService() {
     }
-    return AppComponent;
+    HotSpotService.prototype.getHotSpots = function () {
+        return Promise.resolve(hotspot_mock_1.HOTSPOTS);
+    };
+    return HotSpotService;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "\n    <h1>{{title}}</h1>\n    <my-hotspot></my-hotspot>\n  ",
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+HotSpotService = __decorate([
+    core_1.Injectable()
+], HotSpotService);
+exports.HotSpotService = HotSpotService;
+//# sourceMappingURL=hotspot.service.js.map

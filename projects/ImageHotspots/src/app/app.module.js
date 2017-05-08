@@ -9,6 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
+var hotspot_service_1 = require("./hotspot.service");
+var hotspot_component_1 = require("./hotspot.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -16,9 +18,19 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent],
-        bootstrap: [app_component_1.AppComponent]
+        imports: [
+            platform_browser_1.BrowserModule
+        ],
+        declarations: [
+            app_component_1.AppComponent,
+            hotspot_component_1.HotSpotComponent,
+        ],
+        bootstrap: [
+            app_component_1.AppComponent
+        ],
+        providers: [
+            hotspot_service_1.HotSpotService
+        ],
     })
 ], AppModule);
 exports.AppModule = AppModule;
