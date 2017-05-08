@@ -3,3 +3,8 @@ projects/Accordion/dll/*
 projects/Accordion/node_module/*
 # Thumbnails
 ._*
+
+projects/*/node_modules/*
+projects/*/dll/*
+Projects/*/dist/*
+projects/ImageHotspots/coverage/*
