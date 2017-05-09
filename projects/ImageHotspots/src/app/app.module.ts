@@ -17,13 +17,13 @@ import { PopUpService } from './popup.service';
     HotSpotComponent,
   ],
 
-  bootstrap:    [ 
-    AppComponent 
-  ],
-
   providers: [
     HotSpotService,
 	PopUpService,
+  ],
+
+  bootstrap:    [ 
+    AppComponent 
   ],
 
 })

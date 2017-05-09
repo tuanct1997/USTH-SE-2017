@@ -1,8 +1,8 @@
 ﻿
-import { Component,OnInit } from '@angular/core'
+import { Component,OnInit } from '@angular/core';
 
-import { HotSpot } from './hotspot'
-import { HotSpotService } from './hotspot.service'
+import { HotSpot } from './hotspot';
+import { HotSpotService } from './hotspot.service';
 
 @Component({
   selector: 'my-hotspot',

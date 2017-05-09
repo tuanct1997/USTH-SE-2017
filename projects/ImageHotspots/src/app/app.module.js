@@ -26,12 +26,12 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             hotspot_component_1.HotSpotComponent,
         ],
-        bootstrap: [
-            app_component_1.AppComponent
-        ],
         providers: [
             hotspot_service_1.HotSpotService,
             popup_service_1.PopUpService,
+        ],
+        bootstrap: [
+            app_component_1.AppComponent
         ],
     })
 ], AppModule);

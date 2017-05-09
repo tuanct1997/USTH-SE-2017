@@ -9,7 +9,9 @@ import { POPUPS } from './popup-mock';
 export class PopUpService {
 
 	getPopUps(): Promise<PopUp[]> {
+
 	   return Promise.resolve(POPUPS);
+	
 	}
 
 }
