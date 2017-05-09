@@ -2,8 +2,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
-import { HotSpotService } from './hotspot.service';
 import { HotSpotComponent } from './hotspot.component';
+
+import { HotSpotService } from './hotspot.service';
+import { PopUpService } from './popup.service';
 
 @NgModule({
   imports:      [ 
@@ -20,7 +22,8 @@ import { HotSpotComponent } from './hotspot.component';
   ],
 
   providers: [
-    HotSpotService
+    HotSpotService,
+	PopUpService,
   ],
 
 })

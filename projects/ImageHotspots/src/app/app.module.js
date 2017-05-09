@@ -9,8 +9,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
-var hotspot_service_1 = require("./hotspot.service");
 var hotspot_component_1 = require("./hotspot.component");
+var hotspot_service_1 = require("./hotspot.service");
+var popup_service_1 = require("./popup.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,7 +30,8 @@ AppModule = __decorate([
             app_component_1.AppComponent
         ],
         providers: [
-            hotspot_service_1.HotSpotService
+            hotspot_service_1.HotSpotService,
+            popup_service_1.PopUpService,
         ],
     })
 ], AppModule);

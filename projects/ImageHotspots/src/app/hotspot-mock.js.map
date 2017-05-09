@@ -1,1 +1,1 @@
-{"version":3,"file":"hotspot-mock.js","sourceRoot":"","sources":["hotspot-mock.ts"],"names":[],"mappings":";;AAGa,QAAA,QAAQ,GAAc;IACjC,EAAC,EAAE,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAC;IACnB,EAAC,EAAE,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAC;CACpB,CAAC"}
+{"version":3,"file":"hotspot-mock.js","sourceRoot":"","sources":["hotspot-mock.ts"],"names":[],"mappings":";;AAGa,QAAA,QAAQ,GAAc;IACjC,EAAC,EAAE,EAAE,CAAC,EAAE,CAAC,EAAE,GAAG,EAAE,CAAC,EAAE,GAAG,EAAC;IACvB,EAAC,EAAE,EAAE,CAAC,EAAE,CAAC,EAAE,GAAG,EAAE,CAAC,EAAE,GAAG,EAAC;CACxB,CAAC"}

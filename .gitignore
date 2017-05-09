@@ -5,3 +5,4 @@ projects/*/node_modules/*
 projects/*/dll/*
 Projects/*/dist/*
 projects/ImageHotspots/coverage/*
+projects/ImageHotspots/npm-debug.log
