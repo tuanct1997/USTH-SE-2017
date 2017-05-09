@@ -1,49 +1,66 @@
 ﻿
-import { Component,OnInit } from '@angular/core'
+import { Component,OnInit } from '@angular/core';
 
-import { HotSpot } from './hotspot'
-import { HotSpotService } from './hotspot.service'
+import { HotSpot } from './hotspot';
+import { HotSpotService } from './hotspot.service';
 
 @Component({
   selector: 'my-hotspot',
 
   template: `
     
-    <div class="background">
+    <div>
+		
+	  <p class="background"
+        (click)="onSelectBG()"></p>
+      
+	  <p class="hotspot"
+			*ngFor="let hotspot of hotspots"
+			[class.selected]="hotspot === selectedHotSpot"
+			(click)="onSelect(hotspot)"
+			
+			[ngStyle]="setPosition(hotspot)">
+			{{hotspot.id}}
+      </p>
 
-      <ul>
-        <li *ngFor="let hotspot of hotspots"
-          [class.selected]="hotspot === selectedHotSpot"
-          (click)="onSelect(hotspot)">
-          {{hotspot.id}}
-        </li>
-      </ul>
 
-      <div *ngIf="selectedHotSpot && !backgroundSelected">
+      <div	class="popup"
+			*ngIf="selectedHotSpot && !backgroundSelected">
         <p>Test popup {{selectedHotSpot.id}} </p>
       </div>
-
-      <p class="background"
-        (click)="onSelectBG()"></p>
+	  
     </div>
   `,
 
   styles: [`
     .background {
-      background-image: url("../assets/img/asia.map.jpg");
-      margin: 0 0 2em 0;
-      list-style-type: none;
-      padding: 0;
-      cursor: pointer;
-      position: relative;
-      left: 0;
-      background-color: #EEE;
-      margin: .5em;
-      padding: .3em 0;
-      height: 600px;
-      width: 1200px;
+      position: fixed;
+	  top: 40;
+      left: 50;
+      background-color: #ff9933;
+      height: 500px;
+      width: 1300px;
       border-radius: 4px;
     }
+
+	.hotspot {
+		background-color: #33adff;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		display: solid;
+
+		position: fixed;
+	}
+
+	.popup {
+		height: 100px;
+		width: 600px;
+		position: fixed;
+		background-color: #ffcccc;
+		top: 340px;
+		left: 340px;
+	}
   `],
 
   providers: [
@@ -79,4 +96,12 @@ export class HotSpotComponent implements OnInit {
   ngOnInit(): void {
     this.getHotSpots();
   }
+
+  //set position for hotspot depend on its x y;
+  setPosition = function(hotspot: HotSpot) {
+        return {    
+			top : hotspot.y+'px',
+			left: hotspot.x+'px',
+        }
+	};
 }
