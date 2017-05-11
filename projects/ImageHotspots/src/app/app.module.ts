@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
 import { HotSpotComponent } from './hotspot.component';
+import { PopUpComponent } from './popup.component';
 
 import { HotSpotService } from './hotspot.service';
 import { PopUpService } from './popup.service';
@@ -15,6 +16,7 @@ import { PopUpService } from './popup.service';
   declarations: [ 
     AppComponent,
     HotSpotComponent,
+	PopUpComponent,
   ],
 
   providers: [

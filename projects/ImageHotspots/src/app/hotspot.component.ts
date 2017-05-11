@@ -24,9 +24,9 @@ import { HotSpotService } from './hotspot.service';
       </p>
 
 
-      <div	class="popup"
-			*ngIf="selectedHotSpot && !backgroundSelected">
-        <p>Test popup {{selectedHotSpot.id}} </p>
+      <div *ngIf="!backgroundSelected">
+
+		<my-popup [hotspotID]="selectedHotSpot.id"></my-popup>
       </div>
 	  
     </div>
@@ -53,14 +53,6 @@ import { HotSpotService } from './hotspot.service';
 		position: fixed;
 	}
 
-	.popup {
-		height: 100px;
-		width: 600px;
-		position: fixed;
-		background-color: #ffcccc;
-		top: 340px;
-		left: 340px;
-	}
   `],
 
   providers: [
