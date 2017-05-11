@@ -8,13 +8,29 @@ import { PopUpService } from './popup.service';
 	selector: 'my-popup',
 
 	template:`
+		<div>
+			<template ngFor let-popup [ngForOf]="popups">
 
-		<template ngFor let-popup [ngForOf]="popups">
+				<div *ngIf="popup.id == hotspotID"
+						class="popup"
+						[ngStyle]="setPopUp(popup)">
 
-			<p *ngIf="popup.id == hotspotID">{{popup.content}}</p>
+					<p>{{popup.content}}</p>
+					
+					<a target="_blank" href={{popup.link}}>Read more</a>
 
-		</template>
+				</div>
+
+			</template>
+		</div>
 	`,
+
+	styles: [`
+		.popup {
+			position: fixed;
+			background-color: #ffcccc;
+		}
+	`],
 })
 
 export class PopUpComponent implements OnInit {
@@ -33,5 +49,14 @@ export class PopUpComponent implements OnInit {
 	ngOnInit(): void {
 		this.getPopUps();
 	}
+
+	setPopUp = function(popup: PopUp) {
+        return {    
+			top : popup.y+'px',
+			left: popup.x+'px',
+			height: popup.height+'px',
+			width: popup.width+'px',
+        }
+	};
 
 }
