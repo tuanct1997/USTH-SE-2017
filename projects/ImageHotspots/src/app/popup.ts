@@ -5,4 +5,5 @@ export class PopUp {
 	y: number;
 	width: number;
 	height: number;
+	content: string;
 }

@@ -26,7 +26,8 @@ import { HotSpotService } from './hotspot.service';
 
       <div	class="popup"
 			*ngIf="selectedHotSpot && !backgroundSelected">
-        <p>Test popup {{selectedHotSpot.id}} </p>
+
+		<my-popup [hotspotID]="selectedHotSpot.id"></my-popup>
       </div>
 	  
     </div>
