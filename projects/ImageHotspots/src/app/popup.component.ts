@@ -27,12 +27,8 @@ import { PopUpService } from './popup.service';
 
 	styles: [`
 		.popup {
-			height: 100px;
-			width: 600px;
 			position: fixed;
 			background-color: #ffcccc;
-			top: 340px;
-			left: 340px;
 		}
 	`],
 })
