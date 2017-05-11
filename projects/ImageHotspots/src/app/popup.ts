@@ -6,4 +6,5 @@ export class PopUp {
 	width: number;
 	height: number;
 	content: string;
+	link: string;
 }
