@@ -268,3 +268,11 @@ p.codrops-demos a.current-demo:hover{
 .ac-container input:checked ~ article.ac-large{
 	height: 230px;
 }
+
+.subHeader{
+	margin-bottom: 5px;
+}
+
+.mainHeader{
+	margin-top: 10px;
+}
