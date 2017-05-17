@@ -37,7 +37,7 @@ import { HotSpotService } from './hotspot.service';
       position: fixed;
 	  top: 40;
       left: 50;
-      background-color: #ff9933;
+      background-color: #fff;
       height: 500px;
       width: 1300px;
       border-radius: 4px;
