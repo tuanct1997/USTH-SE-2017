@@ -35,12 +35,15 @@ import { HotSpotService } from './hotspot.service';
   styles: [`
     .background {
       position: fixed;
-	  top: 40;
+	    top: 40;
       left: 50;
       background-color: #ff9933;
       height: 500px;
-      width: 1300px;
+      width: 95%;
       border-radius: 4px;
+      background-image: url('./assets/img/asia.map.jpg');
+      background-size: 100% auto;
+      background-repeat:no-repeat;
     }
 
 	.hotspot {
@@ -92,8 +95,8 @@ export class HotSpotComponent implements OnInit {
   //set position for hotspot depend on its x y;
   setPosition = function(hotspot: HotSpot) {
         return {    
-			top : hotspot.y+'px',
-			left: hotspot.x+'px',
+			top : hotspot.y+'%',
+			left: hotspot.x+'%',
         }
 	};
 }
