@@ -1,28 +1,61 @@
-import {bootstrap, Component,FORM_DIRECTIVES,NgClass,NgFor,NgIf} from 'angular2/angular2';
+import {bootstrap,Component,FORM_DIRECTIVES,NgClass,NgFor,NgIf} from 'angular2/angular2';
+
 @Component({
     selector: 'my-video',
     template: `
-<div>
+<div >
   <h1> ANLLELA SAGRA - WORKOUT MOTIVATION </h1>
-  <video class="vid" id="mp" poster="./video/ANLLELA-SAGRA-WORKOUT-MOTIVATION-thumbnail.png" (loadedmetadata)="processMetaData(movieplayer)"  #movieplayer (timeupdate)="updateDisplayTime(movieplayer)" (mouseenter)= "hideControl(false)" (mouseout)= "hideControl(true)" >
-    <source src="./video/ANLLELA-SAGRA-WORKOUT-MOTIVATION.mp4"/>
-  </video>
-
-
-  <div class="vdctrl" [hidden]="hidectrl"  (mouseenter)= "hideControl(false)" (mouseout)= "hideControl(true)" >
-    <input [hidden]="!movieLoaded" class="slider" type="range" min="0" style="width:99%;height:2px;" max="{{movieplayer.duration}}" id="myRange" [(ng-model)]="currentTimeRange" (input)="seek($event,movieplayer)">
-    <div></div>
-    <button (click)="onPlayPause(movieplayer)"><img style="width:16px;" src={{playpauseimg}}></button>
-    <button  (click)=" onMuteUnmute(movieplayer)"><img style="width:16px;" src={{volumeMuteImg}}></button>
+  <div class="vidplay"  >
     
-    <input #volumerange class="volslider" style="width:80px" type="range" min="1" max="10"   [(ng-model)]="volume" (input)="seekVolume($event,movieplayer)">
-    <span style="color:white">{{currTime}} / {{videoDuration}}</span>
+    <video class="vid" id="mp" poster="./video/ANLLELA-SAGRA-WORKOUT-MOTIVATION-thumbnail.png" (loadedmetadata)="processMetaData(movieplayer)"  #movieplayer (timeupdate)="updateDisplayTime(movieplayer)" (mouseenter)= "hideControl(false)" (mouseout)= "hideControl(true)" >
+      <source src="./video/ANLLELA-SAGRA-WORKOUT-MOTIVATION.mp4"/>
+    </video>
 
-    <button (click)="makeFullScreen(movieplayer)" style="align-items:right;"><img style="width:16px;" src="./fullscreen.svg"></button>
+    <div class="vdctrl" [hidden]="hidectrl" (mouseenter)= "hideControl(false)" (mouseout)= "hideControl(true)" >
+      <input [hidden]="!movieLoaded" class="slider" type="range" min="0" style="width:99%;" max="{{movieplayer.duration}}" id="myRange" [(ng-model)]="currentTimeRange" (input)="seek($event,movieplayer)">
+      <div></div>
+      <button (click)="onPlayPause(movieplayer)"><img style="width:16px;" src={{playpauseimg}}></button>
+      <button  (click)=" onMuteUnmute(movieplayer)"><img style="width:16px;" src={{volumeMuteImg}}></button>
+      <input #volumerange class="volslider" style="width:100px" type="range" min="1" max="10"   [(ng-model)]="volume" (input)="seekVolume($event,movieplayer)">
+      <span style="color:white">{{currTime}} / {{videoDuration}}</span>
+      <button (click)="makeFullScreen(movieplayer)" style="float:right;"><img style="width:16px;" src="./fullscreen.svg"></button>
+    </div>
+    <div class="popupno1">
+    </div>
+    <img class="smile" [hidden]="popup1" src="smile.png" alt="Smiley face" height="40" width="40" >
   </div>
 </div>
 `,
     styles: [` 
+
+h1 {
+  color:#369;
+  text-align: center;
+}
+.vidplay {
+  display:block;
+  background-color:#000000;
+  height:480px;
+  overflow:hidden;
+  z-index:-1;
+}
+.vid {
+  display: block;
+  width: 70%;
+  margin:0 auto;
+}
+.vdctrl {
+  position: relative;
+  width: 70%;
+  top: -50px;
+  margin: 0 auto;
+}
+.smile {
+  position:relative;
+  top:-200px;
+  left:200px;
+  z-index:1;
+}
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
 
 input[type=range].slider {
@@ -218,25 +251,27 @@ class AppComponent {
     public videoDuration="00:00";
     public currTime:string = "";
     public volume: number = 5;
-    public hidectrl: boolean =true;
+    public hidectrl: boolean = true;
+    public popup1: boolean =true;
+    public popup1done: boolean =false;
 
     getBrowser() {
-    if (navigator.userAgent.indexOf("Chrome") != -1) {
-        return "Webkit";
-    } else if (navigator.userAgent.indexOf("Opera") != -1) {
-        return "Opera";
-    } else if (navigator.userAgent.indexOf("MSIE") != -1) {
-        return "IE";
-    } else if (navigator.userAgent.indexOf("Firefox") != -1) {
-        return "Firefox";
-     
-    } else if(navigator.userAgent.indexOf("Safari") != -1) {
-        return "Webkit";
-    } 
-    else {
-        return "unknown";
+        if (navigator.userAgent.indexOf("Chrome") != -1) {
+            return "Webkit";
+        } else if (navigator.userAgent.indexOf("Opera") != -1) {
+            return "Opera";
+        } else if (navigator.userAgent.indexOf("MSIE") != -1) {
+            return "IE";
+        } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+            return "Firefox";
+         
+        } else if(navigator.userAgent.indexOf("Safari") != -1) {
+            return "Webkit";
+        } 
+        else {
+            return "unknown";
+        }
     }
-}
     secondsToMinutesAndSeconds(time) {
         var minutes = Math.floor(time / 60);
         var seconds = Math.round(time % 60);
@@ -258,9 +293,18 @@ class AppComponent {
         
         this.hidectrl = show;
     }
+    checkpopup1(moviePlayer){
+      if ((this.currTime == "0:5") && (this.popup1done == false)) {
+          moviePlayer.pause();
+          this.playpauseimg = "./play.svg";
+          this.popup1 = false;
+          this.popup1done = true;
+      }
+    }
     updateDisplayTime(moviePlayer) {
         this.currTime = this.secondsToMinutesAndSeconds(moviePlayer.currentTime);
         this.currentTimeRange = moviePlayer.currentTime;
+        this.checkpopup1(moviePlayer);
     }
     onMuteUnmute(moviePlayer){
         if(moviePlayer.muted){
@@ -284,7 +328,7 @@ class AppComponent {
         this.playpauseimg = "./pause.svg";
 
     }
-     seekVolume(event,moviePlayer){
+    seekVolume(event,moviePlayer){
          var volumeToBeSet=event.target.value;
          moviePlayer.volume=volumeToBeSet/10;
 
@@ -294,8 +338,6 @@ class AppComponent {
         this.movieLoaded=true;
         moviePlayer.volume = 0.5;
         this.videoDuration=this.secondsToMinutesAndSeconds(moviePlayer.duration);
-           
-      
     }
     onPlayPause(moviePlayer) {
         
