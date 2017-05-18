@@ -1,102 +1,51 @@
 ﻿
-import { Component,OnInit } from '@angular/core';
-
-import { HotSpot } from './hotspot';
-import { HotSpotService } from './hotspot.service';
+import { Component, OnInit } from '@angular/core';
+import { Hotspot }              from './hotspot';
+import { HotspotService }       from './hotspot.service';
 
 @Component({
-  selector: 'my-hotspot',
-
-  template: `
-    
-    <div>
-		
-	  <p class="background"
-        (click)="onSelectBG()"></p>
-      
-	  <p class="hotspot"
-			*ngFor="let hotspot of hotspots"
-			[class.selected]="hotspot === selectedHotSpot"
-			(click)="onSelect(hotspot)"
-			
-			[ngStyle]="setPosition(hotspot)">
-			{{hotspot.id}}
-      </p>
-
-
-      <div *ngIf="!backgroundSelected">
-
-		<my-popup [hotspotID]="selectedHotSpot.id"></my-popup>
-      </div>
-	  
-    </div>
-  `,
-
-  styles: [`
-    .background {
-      position: fixed;
-	    top: 40;
-      left: 50;
-      background-color: #ff9933;
-      height: 500px;
-      width: 95%;
-      border-radius: 4px;
-      background-image: url('./assets/img/asia.map.jpg');
-      background-size: 100% auto;
-      background-repeat:no-repeat;
-    }
-
-	.hotspot {
-		background-color: #33adff;
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
-		display: solid;
-
-		position: fixed;
-	}
-
-  `],
-
-  providers: [
-    HotSpotService
-  ],
+	selector: 'my-hotspot',
+	templateUrl: './hotspot.component.html',
+	providers: [ HotspotService ],
+	styleUrls: ['./hotspot.component.css']
 })
 
-export class HotSpotComponent implements OnInit {
-  hotspots: HotSpot[];
+export class HotspotComponent implements OnInit {
+	hotspots: Hotspot[];
+	errorMessage: string;
+	selectedHotSpot: Hotspot;
 
-  selectedHotSpot: HotSpot;
+	constructor(private _hotspotService: HotspotService) {	}
 
-  //click on back ground = true => close popup
-  backgroundSelected = true;
+	ngOnInit(): void {
+		this.getHotspot();
+	}
 
-  onSelect(hotspot: HotSpot): void{
-    this.backgroundSelected = false;
-    this.selectedHotSpot = hotspot;
-  }
+	getHotspot() {
+		this._hotspotService.getHotspots()
+			.subscribe(
+			hotspots => this.hotspots = hotspots,
+			error => this.errorMessage = <any>error
+			);
+	}
 
-  onSelectBG(): void{
-    this.backgroundSelected = true;
-  }
+	// click on back ground = true => close popup
+	backgroundSelected = true;
 
-  constructor(
-    private hotspotService: HotSpotService,
-  ) {}
+	onSelect(hotspot: Hotspot): void {
+		this.backgroundSelected = false;
+		this.selectedHotSpot = hotspot;
+	}
 
-  getHotSpots(): void {
-    this.hotspotService.getHotSpots().then(hotspots => this.hotspots = hotspots);
-  }
+	onSelectBG(): void {
+		this.backgroundSelected = true;
+	}
 
-  ngOnInit(): void {
-    this.getHotSpots();
-  }
-
-  //set position for hotspot depend on its x y;
-  setPosition = function(hotspot: HotSpot) {
-        return {    
-			top : hotspot.y+'%',
-			left: hotspot.x+'%',
-        }
+	//set position for hotspot depend on its x y;
+	setPosition = function (hotspot: Hotspot) {
+		return {
+			top: hotspot.y + '%',
+			left: hotspot.x + '%',
+		}
 	};
 }

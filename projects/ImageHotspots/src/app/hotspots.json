@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "x": "25",
+      "y": "25",
+      "width": "200",
+      "height": "100",
+      "content": "This is pop up 1",
+      "link": "http://www.drodd.com/images15/1-15.jpg"
+    },
+    {
+      "id": "2",
+      "x": "35",
+      "y": "35",
+      "width": "200",
+      "height": "100",
+      "content": "This is pop up 2",
+      "link": "http://www.drodd.com/images15/2-24.jpg"
+    }
+  ]
+}

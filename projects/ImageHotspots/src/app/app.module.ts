@@ -1,31 +1,36 @@
 ﻿import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
+import { HttpModule, JsonpModule } from '@angular/http';
 
-import { AppComponent }  from './app.component';
-import { HotSpotComponent } from './hotspot.component';
+import { AppComponent } from './app.component';
+import { HotspotComponent } from './hotspot.component';
 import { PopUpComponent } from './popup.component';
 
-import { HotSpotService } from './hotspot.service';
-import { PopUpService } from './popup.service';
+import { HotspotService } from './hotspot.service';
+import { HotspotService } from './popup.service';
 
 @NgModule({
-  imports:      [ 
-    BrowserModule 
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    JsonpModule
   ],
 
-  declarations: [ 
+  declarations: [
     AppComponent,
-    HotSpotComponent,
-	PopUpComponent,
+    HotspotComponent,
+    PopUpComponent,
   ],
 
   providers: [
-    HotSpotService,
-	PopUpService,
+    HotspotService,
+    HotspotService,
   ],
 
-  bootstrap:    [ 
-    AppComponent 
+  bootstrap: [
+    AppComponent
   ],
 
 })

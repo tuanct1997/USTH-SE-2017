@@ -8,6 +8,6 @@
     <my-hotspot></my-hotspot>
   `,
 })
-export class AppComponent  { 
+export class AppComponent {
   title = 'Image Hotspot';
 }
