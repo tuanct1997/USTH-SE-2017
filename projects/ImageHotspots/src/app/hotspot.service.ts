@@ -10,7 +10,7 @@ import { Hotspot } from './hotspot';
 
 @Injectable()
 export class HotspotService {
-  private jsonFileURL: string = 'app/hotspots.json';
+  private jsonFileURL: string = 'app/data.json';
   hotspots: Hotspot[];
   constructor(private http: Http) {
     this.http.get(this.jsonFileURL).subscribe(res => this.hotspots = <Hotspot[]>res.json());

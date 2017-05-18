@@ -1,7 +1,7 @@
 
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Hotspot } from './hotspot';
+import { Popup } from './popup';
 import { PopupService } from './popup.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { PopupService } from './popup.service';
 
 export class PopUpComponent implements OnInit {
 	title = "Why u not working!";
-	popups: Hotspot[];
+	popups: Popup[];
 	errorMessage: string;
 	@Input() hotspotID: number;
 
@@ -34,10 +34,10 @@ export class PopUpComponent implements OnInit {
 		);
 	}
 
-	setPopUp = function(popup: Hotspot) {
+	setPopUp = function(popup: Popup) {
         return {    
-			top : popup.y + '%',
-			left: popup.x + '%',
+			top : popup.top + '%',
+			left: popup.left + '%',
 			height: popup.height + 'px',
 			width: popup.width + 'px',
         }
