@@ -7,7 +7,12 @@
     <h1>{{title}}</h1>
     <my-hotspot></my-hotspot>
   `,
+  styles: [`
+    h1 {
+      text-align: center;
+    }
+  `]
 })
-export class AppComponent  { 
+export class AppComponent {
   title = 'Image Hotspot';
 }
