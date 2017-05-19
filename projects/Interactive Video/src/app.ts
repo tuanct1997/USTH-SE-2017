@@ -4,7 +4,7 @@ import {bootstrap,Component,FORM_DIRECTIVES,NgClass,NgFor,NgIf} from 'angular2/a
     selector: 'my-video',
     template: `
 <div >
-  <h1> ANLLELA SAGRA - WORKOUT MOTIVATION </h1>
+  <h1 class="titlebig"> ANLLELA SAGRA - WORKOUT MOTIVATION </h1>
   <div class="vidplay" >
     
     <video class="vid" id="mp" poster="./video/ANLLELA-SAGRA-WORKOUT-MOTIVATION-thumbnail.png" (loadedmetadata)="processMetaData(movieplayer)"  #movieplayer (timeupdate)="updateDisplayTime(movieplayer)" (mouseenter)= "hideControl(false)" (mouseout)= "hideControl(true)" >
@@ -28,61 +28,44 @@ import {bootstrap,Component,FORM_DIRECTIVES,NgClass,NgFor,NgIf} from 'angular2/a
     <div class="popupno2" [hidden]="popup2">
       <img class="smile" src="smile.png" alt="Smiley face" height="60" width="60" >
     </div>
-   
-  </div>
-  <div class="popupno3" [hidden]="popup3">
-    <div id="watch-description-content">
-      <div id="watch-description-clip">
-        <div id="watch-uploader-info">
-            <strong class="watch-time-text">Published on Jun 30, 2016</strong>
-        </div>
-        <div id="watch-description-text" class="">
-          <p id="eow-description" class="">
-            ➢ Hire Me As Your Online Personal Trainer: 
-            <a href="http://Anllelasagra.net" class="yt-uix-servicelink  " data-url="http://Anllelasagra.net" data-servicelink="CDEQ6TgYACITCIfi8Li5-tMCFcGUWAodXaEHIij4HQ" data-target-new-window="True" rel="nofollow noopener" target="_blank">
-              http://Anllelasagra.net
-            </a>
-            <br>➢ 1Up Discount code (SAGRA) 
-            <a href="http://www.1upnutrition.com" class="yt-uix-servicelink  " data-url="http://www.1upnutrition.com" data-servicelink="CDEQ6TgYACITCIfi8Li5-tMCFcGUWAodXaEHIij4HQ" data-target-new-window="True" rel="nofollow noopener" target="_blank">
-              http://www.1upnutrition.com
-            </a>
-            <br>➢ Instagram: 
-            <a href="http://instagram.com/Anllela_sagra" class="yt-uix-servicelink  " data-url="http://instagram.com/Anllela_sagra" data-servicelink="CDEQ6TgYACITCIfi8Li5-tMCFcGUWAodXaEHIij4HQ" data-target-new-window="True" rel="nofollow noopener" target="_blank">
-              http://instagram.com/Anllela_sagra
-            </a>
-            <br>➢ Facebook: 
-            <a href="https://www.facebook.com/Anllela-Sagra-466521906818912/" class="yt-uix-servicelink  " data-url="https://www.facebook.com/Anllela-Sagra-466521906818912/" data-servicelink="CDEQ6TgYACITCIfi8Li5-tMCFcGUWAodXaEHIij4HQ" data-target-new-window="True" rel="nofollow noopener" target="_blank">
-              https://www.facebook.com/Anllela-Sagr...
-            </a>
-          </p>
-        </div>  
-        <div id="watch-description-extras">
-          <ul class="watch-extras-section">
-            <li class="watch-meta-item yt-uix-expander-body">
-              <h4 class="title">Category</h4>
-              <ul class="content watch-info-tag-list"><li><a href="/channel/UCEgdi0XIXXZ-qJOFPf4JSKw" class="g-hovercard yt-uix-sessionlink      spf-link " data-ytid="UCEgdi0XIXXZ-qJOFPf4JSKw" data-sessionlink="ei=cxoeWcfcG8Gp4gLdwp6QAg">Sports</a></li></ul>
-            </li>
-            <li class="watch-meta-item yt-uix-expander-body">
-              <h4 class="title">License</h4>
-              <ul class="content watch-info-tag-list"><li>Standard YouTube License</li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+    <div class="popupno4" [hidden]="popup4">
+      <h1>Romanian DeadLift</h1>
     </div>
-  </div> 
+   
+   	<div class="popupno5" [hidden]="popup5">
+      <h1>LegPress</h1>
+    </div>
+
+	<div class="popupno3" [hidden]="popup3">
+	  <strong class="summary"> Summary</strong>
+      <p id="eow-description" class="">
+        <a href="https://www.youtube.com/results?search_query=romanian+deadlift" class="yt-uix-servicelink" rel="nofollow noopener" target="_blank">
+          Romanian DeadLift
+        </a>
+        <br>
+        <a href="https://www.youtube.com/results?search_query=leg+press" class="yt-uix-servicelink" rel="nofollow noopener" target="_blank">
+          LegPress
+        </a>
+      </p>
+	</div> 
+
+  </div>
+
+
+
 </div>
 `,
     styles: [` 
 
-h1 {
+.titlebig {
   color:#369;
   text-align: center;
 }
 .vidplay {
   display:block;
   background-color:#000000;
-  height:480px;
+  height:auto;
   overflow:hidden;
   z-index:-1;
 }
@@ -100,8 +83,8 @@ h1 {
 }
 .popupno1 {
   position:absolute;
-  top:100px;
-  left:200px;
+  top:15%;
+  left:20%;
   z-index:1;
   font-family: Arial, Helvetica, sans-serif;
   font-size:30px;
@@ -110,15 +93,35 @@ h1 {
 }
 .popupno2 {
   position:absolute;
-  top:100px;
-  left:800px;
+  top:15%;
+  left:60%;
   z-index:1;
   background-color:#0066ff;
 }
 .popupno3 {
-  position:relative;
-  z-index:1;
-  font-family: Arial, Helvetica, sans-serif;
+  position:absolute;
+  top:30%;
+  left:30%;
+  z-index:1;	
+  font-size:30px;
+  color:red;
+  background-color:#ffffff;
+}
+.popupno4 {
+  position:absolute;
+  top:50%;
+  left:60%;
+  z-index:1;	
+  font-size:15px;
+  color:red;
+}
+.popupno5 {
+  position:absolute;
+  top:50%;
+  left:60%;
+  z-index:1;	
+  font-size:15px;
+  color:red;
 }
 
 
@@ -137,7 +140,7 @@ input[type=range].slider:focus {
 }
 input[type=range].slider::-webkit-slider-runnable-track {
   width: 100%;
-  height: 1.6px;
+  height: 3px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   background: #3b4d4d;
@@ -324,6 +327,10 @@ class AppComponent {
     public popup2done: boolean =false;
     public popup3: boolean =true;
     public popup3done: boolean =false;
+    public popup4: boolean =true;
+    public popup4done: boolean =false;
+    public popup5: boolean =true;
+    public popup5done: boolean =false;
 
     getBrowser() {
         if (navigator.userAgent.indexOf("Chrome") != -1) {
@@ -370,9 +377,8 @@ class AppComponent {
           this.popup1 = false;
           this.popup1done = true;
       }
-      if ((this.currTime == "0:15") && (this.popup1done == true)) {
+      if ((!moviePlayer.paused) && (this.popup1done == true)) {
           this.popup1 = true;
-          this.popup1done = false;
       }
     }
     checkpopup2(moviePlayer){
@@ -395,12 +401,34 @@ class AppComponent {
           this.popup3done = false;
       }
     }
+    checkpopup4(moviePlayer){
+      if ((this.currTime == "0:10") && (this.popup4done == false)) {
+          this.popup4 = false;
+          this.popup4done = true;
+      }
+      if ((this.currTime == "0:15") && (this.popup4done == true)) {
+          this.popup4 = true;
+          this.popup4done = false;
+      }
+    }
+    checkpopup5(moviePlayer){
+      if ((this.currTime == "0:16") && (this.popup5done == false)) {
+          this.popup5 = false;
+          this.popup5done = true;
+      }
+      if ((this.currTime == "0:19") && (this.popup5done == true)) {
+          this.popup5 = true;
+          this.popup5done = false;
+      }
+    }
     updateDisplayTime(moviePlayer) {
         this.currTime = this.secondsToMinutesAndSeconds(moviePlayer.currentTime);
         this.currentTimeRange = moviePlayer.currentTime;
         this.checkpopup1(moviePlayer);
         this.checkpopup2(moviePlayer);
         this.checkpopup3(moviePlayer);
+        this.checkpopup4(moviePlayer);
+        this.checkpopup5(moviePlayer);
     }
     onMuteUnmute(moviePlayer){
         if(moviePlayer.muted){
