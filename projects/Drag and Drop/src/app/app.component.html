@@ -1,0 +1,23 @@
+<div class="main-content">   
+    <div class="title">
+        <h1>{{title}}</h1>
+    </div>
+     <div class="app">
+        <p class="question" >{{question}}</p>
+        <div class="straw" >
+            <div class="dropable" [dragula]='"first-bag"'></div>
+        </div>
+        <div class="dragable" [dragula]='"first-bag"'>
+            <p id ="1" class="answer">{{answer1}}</p>
+            <p id ="2" class="answer">{{answer2}}</p>
+            <p id ="3" class="answer">{{answer3}}</p>
+        </div>
+        
+    </div>
+<div class="app-footer">
+    <button class="showanswer" (click)="changeName()">
+        Show Answer
+    </button>
+    <div class="check">{{answer4}}</div>
+</div>
+</div>
