@@ -8,7 +8,7 @@ import { HotspotComponent } from './hotspot.component';
 import { PopUpComponent } from './popup.component';
 
 import { HotspotService } from './hotspot.service';
-import { HotspotService } from './popup.service';
+import { PopupService } from './popup.service';
 
 @NgModule({
   imports: [
@@ -26,7 +26,7 @@ import { HotspotService } from './popup.service';
 
   providers: [
     HotspotService,
-    HotspotService,
+    PopupService,
   ],
 
   bootstrap: [
