@@ -1,7 +1,7 @@
 <div class="container">
   <img src="./assets/img/asia.map.jpg" class="background" (click)="onSelectBG()">
-  <p class="hotspot" *ngFor="let hotspot of hotspots" [class.selected]="hotspot === selectedHotSpot" (click)="onSelect(hotspot)"
-    [ngStyle]="setPosition(hotspot)"> {{hotspot.id}} </p>
+  <div class="hotspot" *ngFor="let hotspot of hotspots" [class.selected]="hotspot === selectedHotSpot" (click)="onSelect(hotspot)"
+    [ngStyle]="setPosition(hotspot)"> <span>{{hotspot.id}}</span> </div>
   <div *ngIf="!backgroundSelected">
     <my-popup [hotspotID]="selectedHotSpot.id"></my-popup>
   </div>
