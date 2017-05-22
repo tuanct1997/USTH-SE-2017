@@ -8,6 +8,8 @@
 
 
 Group projects links
-- 
+- Interactive Video
+  - Online Deploy: https://agile-sierra-38831.herokuapp.com
+  - Report: https://www.gitbook.com/book/hungsonluong/interactive-video/details
 -
 -
