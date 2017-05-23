@@ -1,20 +1,35 @@
 .background { 
-  overflow: scroll; 
-  position: fixed; 
-  background-color: #ff9933; 
-  height: 1000px; 
-  width: 95%; 
   border-radius: 4px; 
-  background-image: url('./assets/img/asia.map.jpg'); 
-  background-size: 100% auto; 
+  background-size: contain; 
   background-repeat:no-repeat; 
 }
 
+.container {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  width: auto;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .hotspot { 
-  background-color: #33adff; 
-  width: 50px; 
-  height: 50px; 
   border-radius: 50%; 
+  width: 5vw;
+
+  font-size: 3vw;
+  background-color: #33adff; 
+  height: 5vw;
   display: solid; 
-  position: fixed; 
+  position: absolute;
+  text-align: center;
+  -webkit-text-fill-color: black;
+}
+
+.hotspot span {
+  text-align: center;
+  line-height: 5vw;
+  display: block;
 }
