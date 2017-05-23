@@ -1,0 +1,96 @@
+Software Engineering USTH 2017: reports of projects
+
+Reports of groups should follow the below structure:
+
+Summary
+
+Matching game
+team members:
+Trinh Hoang Hai
+Nguyen Vu Hung
+Kieu Quoc Viet
+online link to the deployed project: https://www.gitbook.com/book/hung25197/report-se/details
+1. Requirements (of the web component)
+
+Functional requirements
+
+Feature: Matching similar images
+
+          In order to test and increase the memory abiity of the users
+
+          can be used to learn and memorize new information
+Scenario: Users open the game
+
+        Users click "Play" button
+
+        The game is displayed on the screen
+
+        A table with 4x4 square appear on the screen
+Scenario: Users play the game
+
+        Users click a square
+        The square displays an image
+
+        Users click another square
+        The square displays another image
+Scenario: Check if two Images are the same
+
+        If two images are the same 
+        Two Images will remain
+
+        If two images are not the same 
+        Two image disappear
+
+        Users continue to choose squares
+Scenario: Users win the game
+
+        All images are displayed
+
+        Users win
+Non-functional (quality attributes) requirements
+
+usability: simplify for user
+
+reusability:
+
+perfomance: No latency, stable, easy to use
+
+maintainability: easy to maintain cause of organized code
+
+2. Analysis and design
+
+
+
+3. Implementation
+
+
+
+
+
+4. Testing
+
+5. Deployment and feedback/evaluation
+
+The report above is for Matching game
+
+We do not have enough time to make a new matching game project, so we made a " Hello world " program on angular as lecturer said
+
+Appendix
+
+Contributions of team members: everyone
+
+Reviewing other projects:
+
+Children: 8/10
+
+Well displayed web
+Well organized code
+DCS Set 7/10
+
+Simple code
+well displayed app
+nhomtwo 6/10
+
+well organized code
+well displayed code
+simple code
