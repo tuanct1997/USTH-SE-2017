@@ -1,62 +1,43 @@
 
 import { Component, OnInit, Input } from '@angular/core';
 
-import { PopUp } from './popup';
-import { PopUpService } from './popup.service';
+import { Popup } from './popup';
+import { PopupService } from './popup.service';
 
 @Component({
 	selector: 'my-popup',
-
-	template:`
-		<div>
-			<template ngFor let-popup [ngForOf]="popups">
-
-				<div *ngIf="popup.id == hotspotID"
-						class="popup"
-						[ngStyle]="setPopUp(popup)">
-
-					<p>{{popup.content}}</p>
-					
-					<a target="_blank" href={{popup.link}}>Read more</a>
-
-				</div>
-
-			</template>
-		</div>
-	`,
-
-	styles: [`
-		.popup {
-			position: fixed;
-			background-color: #ffcccc;
-		}
-	`],
+	templateUrl: './popup.component.html',
+	providers: [ PopupService ],
+	styleUrls: ['./popup.component.css']
 })
 
 export class PopUpComponent implements OnInit {
 	title = "Why u not working!";
-	popups: PopUp[];
+	popups: Popup[];
+	errorMessage: string;
 	@Input() hotspotID: number;
 
 	constructor(
-		private popupService: PopUpService,
-	) {}
-
-	getPopUps(): void {
-		this.popupService.getPopUps().then(popups => this.popups = popups);
-	}
-
+		private popupService: PopupService,
+	) { }
+	
 	ngOnInit(): void {
-		this.getPopUps();
+	this.getPopUps();
+	}
+	
+	getPopUps() {
+		this.popupService
+		this.popupService.getPopups()
+			.subscribe(
+			popups => this.popups = popups,
+			error => this.errorMessage = <any>error
+		);
 	}
 
-	setPopUp = function(popup: PopUp) {
+	setPopUp = function(popup: Popup) {
         return {    
-			top : popup.y+'px',
-			left: popup.x+'px',
-			height: popup.height+'px',
-			width: popup.width+'px',
+					top : popup.top + 'vw',
+					left: popup.left + 'vw',
         }
 	};
-
 }

@@ -1,0 +1,156 @@
+{
+    "id":1,
+    "name":"Single choice set",
+    "description":"Quiz",
+    "questions":[
+        {
+        "id":1010,
+        "name":"Goji berries are also known as ...",
+        "questionTypeId" :1,
+        "options":[
+            {
+            "id":1055,
+            "questionId":1010,
+            "name":"Wolfberries",
+            "isAnswer":true
+            },
+            {
+            "id":1056,
+            "questionId":1010,
+            "name":"Catberries",
+            "isAnswer":false
+            },
+            {
+            "id":1057,
+            "questionId":1010,
+            "name":"Bearberries",
+            "isAnswer":false
+            },
+            {
+            "id":1058,
+            "questionId":1010,
+            "name":"Blueberries",
+            "isAnswer":false
+            }
+        ],
+        "questionType":{
+            "id":1,
+            "name":"Single Choice set example",
+            "isActive":true
+            }   
+        },
+
+        {
+            "id":1011,
+            "name":"Choose the correct sentence",
+            "questionTypeId":1,
+            "options":[
+                {
+                    "id":1055,
+                    "questionId":1010,
+                    "name":"They are building a new house at the moment",
+                    "isAnswer":true
+                },
+                {
+                    "id":1056,
+                    "questionId":1010,
+                    "name":"They have been building a new house at the moment",
+                    "isAnswer":false
+                },
+                {
+                    "id":1057,
+                    "questionId":1010,
+                    "name":"They have built a new house at the moment",
+                    "isAnswer":false
+                },
+                {
+                    "id":1058,
+                    "questionId":1010,
+                    "name":"They had built a new house at the moment",
+                    "isAnswer":false
+                }
+                ],
+                "questionType":{
+                    "id":1,
+                    "name":"Grammar question example",
+                    "isActive":true
+                }
+                },
+                
+                
+                {
+                    "id":1012,
+                    "name":"Goji berries are native to...",
+                    "questionTypeId":1,
+                    "options":[
+                        {
+                            "id":1055,
+                            "questionId":1010,
+                            "name":"Europe",
+                            "isAnswer":false
+                        },
+                        {
+                            "id":1056,
+                            "questionId":1010,
+                            "name":"Asia",
+                            "isAnswer":true
+                        },
+                        {
+                            "id":1057,
+                            "questionId":1010,
+                            "name":"Africa",
+                            "isAnswer":false
+                        },
+                        {
+                            "id":1058,
+                            "questionId":1010,
+                            "name":"America",
+                            "isAnswer":false
+                        }
+                    ],
+                    "questionType":{
+                        "id":1,
+                        "name":"Single choice set example",
+                        "isActive":true
+                    }
+                },
+
+                {
+                    "id":1013,
+                    "name":"Goji berries are usually sold...",
+                    "questionTypeId":1,
+                    "options":[
+                        {
+                            "id":1055,
+                            "questionId":1010,
+                            "name":"Pickled",
+                            "isAnswer":false
+                        },
+                        {
+                            "id":1056,
+                            "questionId":1010,
+                            "name":"Frozen",
+                            "isAnswer":false
+                        },
+                        {
+                            "id":1057,
+                            "questionId":1010,
+                            "name":"Dried",
+                            "isAnswer":true
+                        },
+                        {
+                            "id":1058,
+                            "questionId":1010,
+                            "name":"Hawt",
+                            "isAnswer":false
+                        }
+                    ],
+                    "questionType":{
+                        "id":1,
+                        "name":"Single choice set example",
+                        "isActive":true
+            }                 
+        }
+    ]
+}
+
