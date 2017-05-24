@@ -1,52 +1,27 @@
 Feature: Multiple Choice
-A website provides a quizz game with 15 questions 
-Each question have 4 answers, users have to choose one answer. If it is correct, then move to next question.
-At first, user will have 3 "lifes"
+A website provides a quiz with 4 answers.
+User have to choose the right answer and check the result
+If the answer is wrong, user can retry it.
 
 Scenario: user choose an answer
-Given the "life" set has 3 
+Given user choose an answer and click check button
+When the answer is uncorrect 
+Then output should be "Your answer is wrong"
+And give the Retry button
+
+Scenario: user choose an answer
+Given user choose an answer and click check button
 When the answer is correct
-Then output should be "Bingo!"
-And move to next question
-And the "life" sets still remains 3
+Then output should be "Your answer is correct"
+And give the Retry button
 
-Scenario: user choose an answer
-Given The "life" set has 3
-When the answer is incorrect at the first time
-Then output should be "Wrong answer! Retry?"
-And "Retry" button appears
-And the "life" set has 2
+Scenario: user click Check button
+Given user has selected an answer
+When user click Check button
+Then move to result page
 
-Scenario: user press button "Retry"
-Given The "life" sets has 2
-When The answer of that question is wrong
-Then Reset the answer of that question
-
-Scenario: user choose an answer
-Given The "life" set has 2
-When the answer is incorrect at the second time
-Then output should be "Wrong answer! Retry?"
-And "Retry" button appears
-And the "life" set has 1
-
-Scenario: user press button "Retry"
-Given The "life" sets has 1
-When The answer of that question is wrong
-Then Reset the answer of that question
-
-Scenario: user choose an answer
-Given The "life" set has 1
-When the answer is incorrect at the third time
-Then output should be "You are dead! Try the quizz again!"
-And the "life" set has 0
-And "Retry" button appears
-
-Scenario: user press button "Retry"
-Given The "life" sets has 0
-When User answer wrong 3 times
-Then Move to the first question
-And the "life" sets has 3
-
-
-
-
+Scenario: user click Retry button
+Given in result page
+When user click Retry button
+Then move to question page
+ 
