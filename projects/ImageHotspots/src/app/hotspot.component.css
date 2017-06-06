@@ -1,0 +1,35 @@
+.background { 
+  border-radius: 4px; 
+  background-size: contain; 
+  background-repeat:no-repeat; 
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  width: auto;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hotspot { 
+  border-radius: 50%; 
+  width: 5vw;
+
+  font-size: 3vw;
+  background-color: #33adff; 
+  height: 5vw;
+  display: solid; 
+  position: absolute;
+  text-align: center;
+  -webkit-text-fill-color: black;
+}
+
+.hotspot span {
+  text-align: center;
+  line-height: 5vw;
+  display: block;
+}

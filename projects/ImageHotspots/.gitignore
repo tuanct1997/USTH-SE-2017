@@ -1,0 +1,6 @@
+*.js
+*.js.map
+!systemjs-angular-loader.js
+!systemjs.config.js
+/.vs/*
+/node_modules/*

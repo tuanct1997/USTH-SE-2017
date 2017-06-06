@@ -6,3 +6,10 @@
 - [Students tracking on GSheet](https://docs.google.com/spreadsheets/d/1R3-8ordzmRUGzb5M7_tfaSh73Exy1YKR74Iqcr8fRjw/edit#gid=983681293)
 - [Piazza](https://piazza.com/class/j16lfor45jz2o5)
 
+
+Group projects links
+- Interactive Video
+  - Online Deploy: https://agile-sierra-38831.herokuapp.com
+  - Report: https://www.gitbook.com/book/hungsonluong/interactive-video/details
+-
+-

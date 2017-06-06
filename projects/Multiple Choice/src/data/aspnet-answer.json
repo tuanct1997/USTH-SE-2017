@@ -1,0 +1,44 @@
+{
+    "id": 1,
+    "name": "Multiple Choice Quiz",
+    "description": "Multiple Choice Quiz (contains webform, mvc, web API, etc.)",
+    "answers": [
+        {
+            "id": 1010,
+            "name": "What color does the blackcurrant berry actually have?",
+            "questionTypeId": 1,
+            "options": [
+                {
+                    "id": 1055,
+                    "questionId": 1010,
+                    "name": "Blue",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1056,
+                    "questionId": 1010,
+                    "name": "Very dark purple",
+                    "isAnswer": true
+                },
+                {
+                    "id": 1057,
+                    "questionId": 1010,
+                    "name": "Black",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1058,
+                    "questionId": 1010,
+                    "name": "Brown",
+                    "isAnswer": false
+                }
+            ],
+            "questionType": {
+                "id": 1,
+                "name": "Multiple Choice",
+                "isActive": true
+            }
+        }
+    ]
+        
+}
